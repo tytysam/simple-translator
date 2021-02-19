@@ -7,6 +7,6 @@ I built this simple app in order to practice my understanding of the following t
 - useState and useEffect hooks
 - Making an API call with Axios
 - Structuring my own data models
-- API authorization through Google
+- API setup and authorization through Google
 
-See live app <a href="#" target="_blank">here</a>.
+See live app <a href="https://tcs-simple-language-translator.netlify.app/" target="_blank">here</a>.
