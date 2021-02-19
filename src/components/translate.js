@@ -21,7 +21,9 @@ const doTranslation = async (input, languageCode, cancelToken) => {
 };
 
 const Translate = ({ language, text }) => {
-  const [translated, setTranslated] = useState("test");
+  const [translated, setTranslated] = useState(
+    "(start typing to translate...)"
+  );
 
   useEffect(() => {
     if (!text) {

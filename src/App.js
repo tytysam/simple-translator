@@ -5,7 +5,7 @@ import Languages from "./components/languages.js";
 import Translate from "./components/translate.js";
 
 const App = () => {
-  const [language, setLanguage] = useState("ru");
+  const [language, setLanguage] = useState("fr");
   const [text, setText] = useState("");
 
   return (
