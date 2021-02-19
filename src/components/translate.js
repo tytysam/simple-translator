@@ -4,7 +4,7 @@ import axios from "axios";
 const doTranslation = async (input, languageCode, cancelToken) => {
   try {
     const { data } = await axios.post(
-      "https://translation.googleapis.com/language/translate/v2?key=AIzaSyCf0Xy0OnhxlduyEt3K8zP-sOuu-l_u6uA",
+      "https://translation.googleapis.com/language/translate/v2?key=AIzaSyBjDN8mhP2m81QjoAJ1AKihShRnFgoCvNM",
       {
         q: input,
         target: languageCode,
@@ -18,8 +18,8 @@ const doTranslation = async (input, languageCode, cancelToken) => {
   }
 };
 
-export default ({ language, text }) => {
-  const [translated, setTranslated] = useState("");
+const Translate = ({ language, text }) => {
+  const [translated, setTranslated] = useState("test");
 
   useEffect(() => {
     if (!text) {
@@ -30,11 +30,19 @@ export default ({ language, text }) => {
 
     doTranslation(text, language, cancelToken).then(setTranslated);
 
-    return (
-      <div>
-        <label className="label">Output</label>
-        <h1 className="title">{translated}</h1>
-      </div>
-    );
-  });
+    return () => {
+      try {
+        cancelToken.cancel();
+      } catch (err) {}
+    };
+  }, [text, language]);
+
+  return (
+    <div>
+      <label className="label">Output</label>
+      <h1 className="title">{translated}</h1>
+    </div>
+  );
 };
+
+export default Translate;

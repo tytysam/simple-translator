@@ -35,7 +35,7 @@ const Languages = ({ language, onLanguageChange }) => {
       <label className="label">Select Language</label>
       <div className={`dropdown ${open && "is-active"}`}>
         <div className="dropdown-trigger">
-          <button className="bittpm" onClick={() => setOpen(!open)}>
+          <button className="button" onClick={() => setOpen(!open)}>
             <span>{languageConfig.label}</span>
             <span className="icon is-small">
               <i className="fas fa-angle-down" />

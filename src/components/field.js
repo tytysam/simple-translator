@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({ label, value, onChange }) => {
+const Field = ({ label, value, onChange }) => {
   return (
     <div>
       <label>{label}</label>
@@ -12,3 +12,5 @@ export default ({ label, value, onChange }) => {
     </div>
   );
 };
+
+export default Field;
